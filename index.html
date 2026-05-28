@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REDELSUR · Asociación Civil — Inclusión social en Trinidad, Flores</title>
+<meta name="description" content="REDELSUR es una asociación civil de Trinidad, Flores, que trabaja por la inclusión social de jóvenes y adultos con discapacidad a través de talleres y recreación desde el año 2000.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<style>
+  :root{
+    --celeste:#1ca0e3;
+    --celeste-osc:#1481bd;
+    --celeste-prof:#0d5e8c;
+    --amarillo:#ffd23f;
+    --rosa:#ff4fa3;
+    --verde:#5cc46a;
+    --naranja:#ff8a3d;
+    --crema:#fbfdff;
+    --tinta:#143a52;
+    --gris:#5a7488;
+    --blanco:#ffffff;
+    --sombra:0 18px 45px -18px rgba(13,94,140,.45);
+    --radio:26px;
+    --max:1180px;
+    --display:'Baloo 2',system-ui,sans-serif;
+    --body:'Nunito Sans',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);
+    color:var(--tinta);
+    background:var(--crema);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--display);line-height:1.12;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .accesible:focus-visible{outline:3px solid var(--naranja);outline-offset:3px;border-radius:8px}
+
+  /* ====== SKIP LINK ====== */
+  .skip{position:absolute;left:-999px;top:0;background:var(--tinta);color:#fff;padding:12px 20px;border-radius:0 0 12px 0;z-index:999;font-weight:700}
+  .skip:focus{left:0}
+
+  /* ====== HEADER ====== */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(28,160,227,.96);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 24px -8px rgba(13,94,140,.5);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 24px;max-width:var(--max);margin:0 auto}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand .globe{
+    width:46px;height:46px;border-radius:50%;
+    flex-shrink:0;object-fit:cover;display:block;
+    mix-blend-mode:lighten;
+  }
+  .brand .txt strong{font-family:var(--display);font-weight:800;color:#fff;font-size:1.5rem;letter-spacing:.04em;display:block;line-height:1}
+  .brand .txt span{color:rgba(255,255,255,.9);font-size:.66rem;letter-spacing:.32em;font-weight:700;text-transform:uppercase}
+  img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;display:inline-block}
+  nav ul{display:flex;gap:6px;list-style:none;align-items:center}
+  nav a{color:#fff;font-weight:700;padding:9px 15px;border-radius:50px;transition:.25s;font-size:.95rem}
+  nav a:hover{background:rgba(255,255,255,.2)}
+  nav a.cta{background:var(--amarillo);color:var(--tinta);box-shadow:0 6px 16px -6px rgba(0,0,0,.3)}
+  nav a.cta:hover{background:#ffdd66;transform:translateY(-2px)}
+  .burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+  .burger span{width:26px;height:3px;background:#fff;border-radius:3px;transition:.3s}
+
+  /* ====== HERO ====== */
+  .hero{position:relative;background:url('assets/background.jpg') center center/cover no-repeat;overflow:hidden;color:#fff}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,60,100,.55) 0%,rgba(5,60,100,.3) 55%,transparent 100%)}
+  .hero .wrap{position:relative;z-index:2;padding-top:90px;padding-bottom:100px}
+  .hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);padding:7px 16px;border-radius:50px;font-weight:700;font-size:.85rem;margin-bottom:22px;backdrop-filter:blur(4px)}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.7rem);font-weight:800;margin-bottom:18px}
+  .hero h1 .hl{color:var(--amarillo)}
+  .hero p.lead{font-size:clamp(1.05rem,2vw,1.25rem);max-width:540px;color:rgba(255,255,255,.94);margin-bottom:30px}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;padding:15px 30px;border-radius:50px;cursor:pointer;border:none;font-size:1.02rem;transition:.28s}
+  .btn-primary{background:var(--amarillo);color:var(--tinta);box-shadow:0 12px 28px -10px rgba(0,0,0,.4)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 36px -10px rgba(0,0,0,.45)}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(255,255,255,.55)}
+  .btn-ghost:hover{background:rgba(255,255,255,.22)}
+
+  .hero .wrap > div{max-width:580px}
+
+  .wave{display:block;line-height:0}
+  .wave svg{width:100%;height:auto}
+
+  /* ====== SECTIONS ====== */
+  section{padding:80px 0}
+  .eyebrow{display:inline-block;font-family:var(--display);font-weight:700;color:var(--celeste);text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;margin-bottom:12px}
+  .sec-title{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:800;margin-bottom:18px}
+  .sec-intro{max-width:680px;color:var(--gris);font-size:1.1rem;margin-bottom:48px}
+  .center{text-align:center}
+  .center .sec-intro{margin-left:auto;margin-right:auto}
+
+  /* QUIENES SOMOS */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .about .stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .stat{background:#fff;border:2px solid #eaf4fb;border-radius:var(--radio);padding:26px 22px;text-align:center;box-shadow:var(--sombra);position:relative;overflow:hidden}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:6px}
+  .stat:nth-child(1)::before{background:var(--celeste)}
+  .stat:nth-child(2)::before{background:var(--rosa)}
+  .stat:nth-child(3)::before{background:var(--verde)}
+  .stat:nth-child(4)::before{background:var(--naranja)}
+  .stat .num{font-family:var(--display);font-size:2.4rem;font-weight:800;color:var(--celeste-prof);line-height:1}
+  .stat:nth-child(2) .num{color:var(--rosa)}
+  .stat:nth-child(3) .num{color:var(--verde)}
+  .stat:nth-child(4) .num{color:var(--naranja)}
+  .stat .lbl{font-size:.92rem;color:var(--gris);font-weight:600;margin-top:6px}
+  .about p{margin-bottom:18px;font-size:1.08rem;color:var(--tinta)}
+
+  /* AREAS */
+  .areas{background:linear-gradient(180deg,#eef8fe 0%,#fbfdff 100%)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:#fff;border-radius:var(--radio);padding:34px 30px;box-shadow:var(--sombra);border:2px solid #eef6fc;transition:.3s;position:relative}
+  .card:hover{transform:translateY(-8px)}
+  .card .ico{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:1.9rem;margin-bottom:20px}
+  .card:nth-child(1) .ico{background:#e3f4fd}
+  .card:nth-child(2) .ico{background:#ffe6f2}
+  .card:nth-child(3) .ico{background:#e6f7e9}
+  .card h3{font-size:1.4rem;margin-bottom:14px;font-weight:700}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .tag{font-size:.82rem;font-weight:700;padding:6px 13px;border-radius:50px;background:#f1f8fd;color:var(--celeste-osc)}
+  .card:nth-child(2) .tag{background:#fff0f7;color:#d62d82}
+  .card:nth-child(3) .tag{background:#eefaf0;color:#3a9c48}
+
+  /* TALLERES / TRANSPORTE */
+  .feature{display:grid;grid-template-columns:1fr 1fr;gap:0;background:linear-gradient(135deg,var(--celeste) 0%,var(--celeste-osc) 100%);border-radius:34px;overflow:hidden;box-shadow:var(--sombra);color:#fff;align-items:stretch}
+  .feature .txt{padding:54px 48px}
+  .feature .eyebrow{color:var(--amarillo)}
+  .feature h2{color:#fff;font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:18px}
+  .feature p{color:rgba(255,255,255,.93);font-size:1.08rem;margin-bottom:20px}
+  .transport{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.3);border-radius:20px;padding:20px 22px}
+  .transport .ti{font-size:2.2rem}
+  .transport strong{display:block;font-family:var(--display);font-size:1.05rem}
+  .transport span{font-size:.95rem;color:rgba(255,255,255,.88)}
+  .feature .visual{background:linear-gradient(160deg,#ffd23f33,#ff4fa322);display:grid;place-items:center;padding:40px;position:relative}
+  .feature .visual .big-ico{font-size:7rem;filter:drop-shadow(0 10px 20px rgba(0,0,0,.2))}
+
+  /* VALORES */
+  .valores{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:10px}
+  .val{text-align:center;padding:30px 18px;border-radius:var(--radio);background:#fff;box-shadow:var(--sombra);border:2px solid #eef6fc}
+  .val .ve{font-size:2.6rem;display:block;margin-bottom:12px}
+  .val h4{font-size:1.15rem;margin-bottom:6px}
+  .val p{font-size:.9rem;color:var(--gris)}
+
+  /* COLABORAR CTA */
+  .colaborar{text-align:center;background:linear-gradient(135deg,#ffd23f 0%,#ff8a3d 100%);border-radius:36px;padding:64px 40px;box-shadow:var(--sombra);color:var(--tinta);position:relative;overflow:hidden}
+  .colaborar::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.25) 1px,transparent 0);background-size:24px 24px}
+  .colaborar h2{position:relative;font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:14px}
+  .colaborar p{position:relative;max-width:560px;margin:0 auto 28px;font-size:1.1rem;font-weight:600}
+  .colaborar .btn{position:relative;background:var(--tinta);color:#fff}
+  .colaborar .btn:hover{background:#0d2333;transform:translateY(-3px)}
+
+  /* CONTACTO */
+  .contacto{background:#eef8fe}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  .info-list{display:flex;flex-direction:column;gap:18px;margin-top:6px}
+  .info-item{display:flex;gap:16px;align-items:flex-start;background:#fff;padding:20px 22px;border-radius:20px;box-shadow:0 10px 30px -16px rgba(13,94,140,.35)}
+  .info-item .ic{width:46px;height:46px;flex-shrink:0;border-radius:14px;display:grid;place-items:center;font-size:1.3rem;background:#e3f4fd}
+  .info-item h4{font-size:1.02rem;margin-bottom:2px}
+  .info-item p,.info-item a{color:var(--gris);font-size:.98rem;word-break:break-word}
+  .info-item a:hover{color:var(--celeste)}
+  form{background:#fff;border-radius:var(--radio);padding:32px;box-shadow:var(--sombra)}
+  form label{display:block;font-weight:700;margin-bottom:6px;font-size:.92rem}
+  form input,form textarea{width:100%;padding:13px 16px;border:2px solid #e2eef6;border-radius:14px;font-family:var(--body);font-size:1rem;margin-bottom:18px;transition:.2s;background:#fafdff}
+  form input:focus,form textarea:focus{outline:none;border-color:var(--celeste);background:#fff}
+  form textarea{resize:vertical;min-height:120px}
+  form .btn-primary{width:100%;justify-content:center}
+  .form-msg{display:none;background:#e6f7e9;color:#2f7d3b;padding:14px;border-radius:14px;font-weight:700;text-align:center;margin-top:6px}
+  .map-embed{margin-top:30px;border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra);border:3px solid #fff}
+  .map-embed iframe{width:100%;height:300px;border:0;display:block}
+
+  /* FOOTER */
+  footer{background:linear-gradient(160deg,#0d6ba0,#0a4f78);color:#fff;padding:56px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:36px}
+  footer .foot-about p{color:rgba(255,255,255,.8);margin-top:18px;font-size:.96rem;max-width:320px}
+  footer .brand .logo-img{height:52px;width:auto;flex-shrink:0}
+  footer h5{font-family:var(--display);font-size:1.05rem;margin-bottom:16px;color:var(--amarillo)}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  footer ul a,footer .fc{color:rgba(255,255,255,.82);font-size:.95rem;transition:.2s}
+  footer ul a:hover{color:#fff;padding-left:4px}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:22px;text-align:center;color:rgba(255,255,255,.65);font-size:.88rem}
+
+  /* REVEAL ANIM */
+  .reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.16,1,.3,1)}
+  .reveal.show{opacity:1;transform:none}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .hero{background:linear-gradient(160deg,#1ca0e3 0%,#1689c8 55%,#0d6ba0 100%)}
+    .hero::after{background:radial-gradient(circle at 1px 1px,rgba(255,255,255,.13) 1px,transparent 0);background-size:26px 26px;opacity:.6}
+    .hero .wrap{padding-top:60px;padding-bottom:80px}
+    .hero .wrap > div{max-width:100%}
+    .about,.contact-grid,.feature{grid-template-columns:1fr}
+    .cards,.valores{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .feature .visual{min-height:200px}
+    nav ul{display:none}
+    .burger{display:flex}
+    nav.open ul{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--celeste-osc);padding:14px;gap:4px}
+    nav.open ul a{display:block}
+  }
+  @media(max-width:560px){
+    .cards,.valores,.about .stats{grid-template-columns:1fr}
+    section{padding:56px 0}
+    .feature .txt{padding:38px 28px}
+    .colaborar{padding:48px 26px}
+    form{padding:24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Saltar al contenido principal</a>
+
+<!-- HEADER -->
+<header>
+  <nav class="nav" id="nav">
+    <a class="brand accesible" href="#inicio" aria-label="REDELSUR inicio">
+      <img class="globe" src="assets/arriba.jpg" alt="" aria-hidden="true">
+      <span class="txt"><strong>REDELSUR</strong><span>Asociación Civil</span></span>
+    </a>
+    <button class="burger accesible" id="burger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a class="accesible" href="#inicio">Inicio</a></li>
+      <li><a class="accesible" href="#nosotros">Quiénes somos</a></li>
+      <li><a class="accesible" href="#areas">Áreas</a></li>
+      <li><a class="accesible" href="#talleres">Talleres</a></li>
+      <li><a class="accesible cta" href="#contacto">Contáctanos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="inicio" style="padding-top:0;padding-bottom:0">
+  <div class="wrap">
+    <div>
+      <span class="badge">🌎 Trinidad · Flores · desde el año 2000</span>
+      <h1>Inclusión social a través del <span class="hl">trabajo</span> y la <span class="hl">recreación</span></h1>
+      <p class="lead">Acompañamos a jóvenes y adultos con discapacidad con talleres que abren puertas hacia nuevas oportunidades laborales y una vida más plena.</p>
+      <div class="hero-btns">
+        <a href="#talleres" class="btn btn-primary accesible">Conocé nuestros talleres</a>
+        <a href="#colaborar" class="btn btn-ghost accesible">Quiero colaborar</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wave" aria-hidden="true" style="background:var(--celeste-osc)">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="#fbfdff" d="M0,40 C240,90 480,0 720,30 C960,60 1200,90 1440,40 L1440,90 L0,90 Z"></path></svg>
+</div>
+
+<!-- QUIENES SOMOS -->
+<section id="nosotros">
+  <div class="wrap about">
+    <div class="reveal">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2 class="sec-title">Una red que construye oportunidades</h2>
+      <p>REDELSUR es una <strong>asociación civil</strong> de Trinidad, en el departamento de Flores, dedicada a la <strong>recreación y la promoción cultural</strong>. Desde el año 2000 trabajamos por la inclusión social de jóvenes y adultos con discapacidad.</p>
+      <p>Brindamos una amplia diversidad de talleres pensados para prepararlos y acompañarlos en la búsqueda de una oportunidad laboral real, fortaleciendo su autonomía, sus vínculos y su bienestar.</p>
+    </div>
+    <div class="reveal stats">
+      <div class="stat"><div class="num" data-count="25">+25</div><div class="lbl">años de trayectoria</div></div>
+      <div class="stat"><div class="num">2000</div><div class="lbl">año de fundación</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">áreas de trabajo</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">compromiso social</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas" id="areas">
+  <div class="wrap center">
+    <span class="eyebrow reveal">Áreas de trabajo</span>
+    <h2 class="sec-title reveal">En qué trabajamos cada día</h2>
+    <p class="sec-intro reveal">Nuestra labor se organiza en tres grandes áreas que se complementan para acompañar de forma integral a cada persona.</p>
+  </div>
+  <div class="wrap cards">
+    <div class="card reveal">
+      <div class="ico" aria-hidden="true">🎨</div>
+      <h3>Ideas, cultura y tiempo libre</h3>
+      <p style="color:var(--gris)">Espacios creativos y recreativos que estimulan la expresión, el aprendizaje y el disfrute.</p>
+      <div class="tags"><span class="tag">Actividades recreativas</span><span class="tag">Deportes</span></div>
+    </div>
+    <div class="card reveal">
+      <div class="ico" aria-hidden="true">🤝</div>
+      <h3>Inclusión social</h3>
+      <p style="color:var(--gris)">Acompañamiento para fortalecer la autonomía y la participación plena en la comunidad.</p>
+      <div class="tags"><span class="tag">Discapacidad</span></div>
+    </div>
+    <div class="card reveal">
+      <div class="ico" aria-hidden="true">💚</div>
+      <h3>Salud</h3>
+      <p style="color:var(--gris)">Promoción del bienestar físico y emocional como base para una vida plena.</p>
+      <div class="tags"><span class="tag">Promoción de la salud</span><span class="tag">Salud mental</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TALLERES + TRANSPORTE -->
+<section id="talleres">
+  <div class="wrap">
+    <div class="feature reveal">
+      <div class="txt">
+        <span class="eyebrow">Nuestros talleres</span>
+        <h2>Preparación para una oportunidad laboral</h2>
+        <p>Cada día ofrecemos talleres diseñados para desarrollar habilidades, fomentar la confianza y acercar a los beneficiarios al mundo del trabajo, en un ambiente de respeto, alegría y compañerismo.</p>
+        <div class="transport">
+          <span class="ti" aria-hidden="true">🚐</span>
+          <div>
+            <strong>Transporte habilitado incluido</strong>
+            <span>Contamos con transporte habilitado contratado para el traslado de los beneficiarios a los talleres diarios.</span>
+          </div>
+        </div>
+      </div>
+      <div class="visual" aria-hidden="true">
+        <span class="big-ico">🧩</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<section style="padding-top:0">
+  <div class="wrap center">
+    <span class="eyebrow reveal">Lo que nos mueve</span>
+    <h2 class="sec-title reveal">Nuestros valores</h2>
+  </div>
+  <div class="wrap valores">
+    <div class="val reveal"><span class="ve" aria-hidden="true">🌈</span><h4>Inclusión</h4><p>Un lugar para todas y todos, sin excepciones.</p></div>
+    <div class="val reveal"><span class="ve" aria-hidden="true">💪</span><h4>Oportunidad</h4><p>Herramientas reales para crecer y trabajar.</p></div>
+    <div class="val reveal"><span class="ve" aria-hidden="true">❤️</span><h4>Diversidad</h4><p>Cada persona aporta algo único y valioso.</p></div>
+    <div class="val reveal"><span class="ve" aria-hidden="true">🏘️</span><h4>Comunidad</h4><p>Construimos red junto a las familias y el barrio.</p></div>
+  </div>
+</section>
+
+<!-- COLABORAR -->
+<section id="colaborar" style="padding-top:0">
+  <div class="wrap">
+    <div class="colaborar reveal">
+      <h2>Sumá tu granito de arena 💛</h2>
+      <p>Tu apoyo, tu tiempo o tu donación ayudan a que más jóvenes y adultos con discapacidad accedan a nuevas oportunidades. ¡Escribinos y enterate cómo colaborar!</p>
+      <a href="#contacto" class="btn accesible">Quiero colaborar</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow reveal">Contacto</span>
+      <h2 class="sec-title reveal">Estamos para acompañarte</h2>
+      <p class="sec-intro reveal">Acercate, escribinos o llamanos. Nos encontrás frente al Parque Centenario, en pleno corazón de Trinidad.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="info-list">
+          <div class="info-item">
+            <span class="ic" aria-hidden="true">📍</span>
+            <div><h4>Dirección</h4><p>Antonio J. Caorsi N.º 1307<br>(frente al Parque Centenario)<br>Trinidad, Flores</p></div>
+          </div>
+          <div class="info-item">
+            <span class="ic" aria-hidden="true">📞</span>
+            <div><h4>Teléfono</h4><p><a href="tel:43644305">4364 4305</a></p></div>
+          </div>
+          <div class="info-item">
+            <span class="ic" aria-hidden="true">✉️</span>
+            <div><h4>Email</h4><p><a href="mailto:redelsur21@gmail.com">redelsur21@gmail.com</a></p></div>
+          </div>
+          <div class="info-item">
+            <span class="ic" aria-hidden="true">🏷️</span>
+            <div><h4>Organización</h4><p>Asociación civil de recreación y promoción cultural · Fundada en 2000</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <form id="contactForm">
+          <label for="nombre">Nombre</label>
+          <input class="accesible" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          <label for="email">Email</label>
+          <input class="accesible" type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+          <label for="mensaje">Mensaje</label>
+          <textarea class="accesible" id="mensaje" name="mensaje" placeholder="Contanos en qué podemos ayudarte o cómo querés colaborar..." required></textarea>
+          <button type="submit" class="btn btn-primary accesible">Enviar mensaje</button>
+          <div class="form-msg" id="formMsg">¡Gracias! Tu mensaje fue preparado. Te responderemos a la brevedad. 💛</div>
+        </form>
+      </div>
+    </div>
+    <div class="map-embed reveal">
+      <iframe title="Ubicación de REDELSUR en Trinidad, Flores" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Antonio+J+Caorsi+1307+Trinidad+Flores+Uruguay&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-about">
+      <a class="brand" href="#inicio" aria-label="REDELSUR">
+        <img class="logo-img" src="assets/logo.jpg" alt="REDELSUR Asociación Civil">
+      </a>
+      <p>Trabajamos por la inclusión social de jóvenes y adultos con discapacidad en Trinidad, Flores, desde el año 2000.</p>
+    </div>
+    <div>
+      <h5>Navegación</h5>
+      <ul>
+        <li><a href="#nosotros">Quiénes somos</a></li>
+        <li><a href="#areas">Áreas de trabajo</a></li>
+        <li><a href="#talleres">Talleres</a></li>
+        <li><a href="#colaborar">Colaborar</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contacto</h5>
+      <ul>
+        <li class="fc">📍 Antonio J. Caorsi 1307, Trinidad</li>
+        <li><a href="tel:43644305">📞 4364 4305</a></li>
+        <li><a href="mailto:redelsur21@gmail.com">✉️ redelsur21@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom wrap">
+    © <span id="year"></span> Asociación Civil REDELSUR · Trinidad, Flores · Todos los derechos reservados.
+  </div>
+</footer>
+
+<script>
+  // Año dinámico
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Menú móvil
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav');
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open'); burger.setAttribute('aria-expanded', false);
+  }));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay=(i%4*0.08)+'s'; io.observe(el); });
+
+  // Formulario (mailto)
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (ev)=>{
+    ev.preventDefault();
+    const n=encodeURIComponent(form.nombre.value);
+    const e=encodeURIComponent(form.email.value);
+    const m=encodeURIComponent(form.mensaje.value);
+    document.getElementById('formMsg').style.display='block';
+    window.location.href=`mailto:redelsur21@gmail.com?subject=Contacto%20web%20de%20${n}&body=${m}%0A%0ADe:%20${n}%20(${e})`;
+  });
+
+  // Emojis universales via Twemoji (mismo look en todos los SO y navegadores)
+  twemoji.parse(document.body, {
+    base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
+    folder: 'svg',
+    ext: '.svg'
+  });
+</script>
+</body>
+</html>
