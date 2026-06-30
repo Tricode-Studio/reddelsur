@@ -1,0 +1,63 @@
+---
+import '@styles/styles.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'REDELSUR · Asociación Civil — Inclusión social en Trinidad, Flores',
+  description = 'REDELSUR es una asociación civil de Trinidad, Flores, que trabaja por la inclusión social de jóvenes y adultos con discapacidad a través de talleres y recreación desde el año 2000.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js"
+      crossorigin="anonymous"
+      is:inline
+    ></script>
+  </head>
+  <body>
+    <a href="#main" class="skip">Saltar al contenido principal</a>
+    <slot />
+    <script is:inline>
+      // Reveal on scroll
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('show');
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      document.querySelectorAll('.reveal').forEach((el, i) => {
+        el.style.transitionDelay = (i % 4) * 0.08 + 's';
+        io.observe(el);
+      });
+
+      // Twemoji
+      twemoji.parse(document.body, {
+        base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
+        folder: 'svg',
+        ext: '.svg',
+      });
+    </script>
+  </body>
+</html>

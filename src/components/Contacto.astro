@@ -1,0 +1,104 @@
+---
+---
+
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow reveal">Contacto</span>
+      <h2 class="sec-title reveal">Estamos para acompañarte</h2>
+      <p class="sec-intro reveal">
+        Acercate, escribinos o llamanos. Nos encontrás frente al Parque Centenario, en pleno
+        corazón de Trinidad.
+      </p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="info-list">
+          <div class="info-item">
+            <span class="ic" aria-hidden="true">📍</span>
+            <div>
+              <h4>Dirección</h4>
+              <p>
+                Antonio J. Caorsi N.º 1307<br />(frente al Parque Centenario)<br />Trinidad, Flores
+              </p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="ic" aria-hidden="true">📞</span>
+            <div>
+              <h4>Teléfono</h4>
+              <p><a href="tel:43644305">4364 4305</a></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="ic" aria-hidden="true">✉️</span>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:redelsur21@gmail.com">redelsur21@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="ic" aria-hidden="true">🏷️</span>
+            <div>
+              <h4>Organización</h4>
+              <p>Asociación civil de recreación y promoción cultural · Fundada en 2000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <form id="contactForm">
+          <label for="nombre">Nombre</label>
+          <input
+            class="accesible"
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Tu nombre"
+            required
+          />
+          <label for="email">Email</label>
+          <input
+            class="accesible"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="tucorreo@ejemplo.com"
+            required
+          />
+          <label for="mensaje">Mensaje</label>
+          <textarea
+            class="accesible"
+            id="mensaje"
+            name="mensaje"
+            placeholder="Contanos en qué podemos ayudarte o cómo querés colaborar..."
+            required></textarea>
+          <button type="submit" class="btn btn-primary accesible">Enviar mensaje</button>
+          <div class="form-msg" id="formMsg">
+            ¡Gracias! Tu mensaje fue preparado. Te responderemos a la brevedad. 💛
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="map-embed reveal">
+      <iframe
+        title="Ubicación de REDELSUR en Trinidad, Flores"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Antonio+J+Caorsi+1307+Trinidad+Flores+Uruguay&output=embed"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const n = encodeURIComponent((form.elements.namedItem('nombre') as HTMLInputElement).value);
+    const e = encodeURIComponent((form.elements.namedItem('email') as HTMLInputElement).value);
+    const m = encodeURIComponent((form.elements.namedItem('mensaje') as HTMLTextAreaElement).value);
+    (document.getElementById('formMsg') as HTMLElement).style.display = 'block';
+    window.location.href = `mailto:redelsur21@gmail.com?subject=Contacto%20web%20de%20${n}&body=${m}%0A%0ADe:%20${n}%20(${e})`;
+  });
+</script>

@@ -1,0 +1,41 @@
+---
+---
+
+<header>
+  <nav class="nav" id="nav">
+    <a class="brand accesible" href="#inicio" aria-label="REDELSUR inicio">
+      <img class="globe" src="/assets/arriba.jpg" alt="" aria-hidden="true" />
+      <span class="txt">
+        <strong>REDELSUR</strong>
+        <span>Asociación Civil</span>
+      </span>
+    </a>
+    <button class="burger accesible" id="burger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a class="accesible" href="#inicio">Inicio</a></li>
+      <li><a class="accesible" href="#nosotros">Quiénes somos</a></li>
+      <li><a class="accesible" href="#areas">Áreas</a></li>
+      <li><a class="accesible" href="#talleres">Talleres</a></li>
+      <li><a class="accesible cta" href="#contacto">Contáctanos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const burger = document.getElementById('burger') as HTMLButtonElement;
+  const nav = document.getElementById('nav') as HTMLElement;
+
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+  });
+
+  nav.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    })
+  );
+</script>

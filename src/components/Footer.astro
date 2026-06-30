@@ -1,0 +1,43 @@
+---
+---
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-about">
+      <a class="brand" href="#inicio" aria-label="REDELSUR">
+        <img class="logo-img" src="/assets/logo.jpg" alt="REDELSUR Asociación Civil" />
+      </a>
+      <p>
+        Trabajamos por la inclusión social de jóvenes y adultos con discapacidad en Trinidad,
+        Flores, desde el año 2000.
+      </p>
+    </div>
+    <div>
+      <h5>Navegación</h5>
+      <ul>
+        <li><a href="#nosotros">Quiénes somos</a></li>
+        <li><a href="#areas">Áreas de trabajo</a></li>
+        <li><a href="#talleres">Talleres</a></li>
+        <li><a href="#colaborar">Colaborar</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contacto</h5>
+      <ul>
+        <li class="fc">📍 Antonio J. Caorsi 1307, Trinidad</li>
+        <li><a href="tel:43644305">📞 4364 4305</a></li>
+        <li><a href="mailto:redelsur21@gmail.com">✉️ redelsur21@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom wrap">
+    © <span id="year"></span> Asociación Civil REDELSUR · Trinidad, Flores · Todos los derechos
+    reservados.
+  </div>
+</footer>
+
+<script>
+  (document.getElementById('year') as HTMLElement).textContent = String(
+    new Date().getFullYear()
+  );
+</script>

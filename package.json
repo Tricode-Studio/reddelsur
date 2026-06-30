@@ -1,0 +1,23 @@
+{
+  "name": "redelsur",
+  "version": "1.0.0",
+  "description": "REDELSUR — Asociación Civil, Trinidad, Flores",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^4.16.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.5.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}
